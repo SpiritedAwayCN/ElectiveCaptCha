@@ -1,0 +1,6 @@
+*.gif
+*.pyc
+.ipynb_checkpoints
+*.h5
+*.png
+.vscode
