@@ -6,7 +6,7 @@
 
 本项目仅用于学习交流，因此此处不提供训练数据以及预训练模型。仅包含代码与思路。
 
-[PKUAutoElevtive](https://github.com/zhongxinghong/PKUAutoElective)项目部分重写了此处的图像预处理代码，使得其摆脱OpenCV依赖库。由于该项目采用pytorch，因此模型的训练与本项目是独立的，准确率相近，而该项目的模型经过了更加细致的Fine Tunning.
+[PKUAutoElevtive](https://github.com/zhongxinghong/PKUAutoElective)可能部分重写了此处的图像预处理代码，使得其摆脱OpenCV依赖库。由于该项目采用pytorch，因此模型的训练与本项目是独立的，准确率相近，而PKUAutoElevtive的模型经过了更加细致的Fine Tunning.
 
 数据集大小：共5130张gif(按8:2划分训练集与测试集)，AutoElective的训练集会更大。
 
@@ -16,6 +16,7 @@
 * opencv
 * pillow
 * numpy
+* matplotlib (optional)
 * tqdm (optional)
 
 ## 文件结构
@@ -83,3 +84,6 @@ Epoch 15/15
 
 ### bootstrap.py
 自举，登录选课网获取识别验证码并提交，测试准确率（约95%）
+
+### bootstrap-visualize.ipynb
+验证码识别过程可视化。
