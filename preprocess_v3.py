@@ -116,8 +116,9 @@ def main():
                 new_img = func_img4(img4)
                 new_img = cropping(new_img, None, True)
             else:
-                new_img = func_subtract(img4, last_img)
-                new_img = cropping(new_img, None if index == 7 else last_img)
+                new_img0 = func_subtract(img4, last_img)
+                new_img = cropping(new_img0, None if index == 7 else s_img)
+                s_img = new_img0
             last_img = img4
 
             new_img = 255 - new_img
