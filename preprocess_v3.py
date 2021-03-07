@@ -40,7 +40,11 @@ def img_crop(image, w):
         cropped[:, :image.shape[1]-w] = image[:, w:]
     return cropped
 
-def cropping(proced_img, first = False):
+def cropping(proced_img, last_image, first = False):
+    if not last_image is None:
+        test_image = cv2.bitwise_and(255 - proced_img, 255 - last_image)
+        proced_img = cv2.add(test_image, proced_img)
+
     blur = cv2.medianBlur(proced_img, 5)
     kernel = cv2.getStructuringElement(cv2.MORPH_CROSS ,(11,11))
     opened = cv2.morphologyEx(blur, cv2.MORPH_OPEN,kernel, iterations=3)
@@ -77,10 +81,11 @@ def gen_images(img, norm=True):
 
         if index == 3:
             new_img = func_img4(img4)
-            new_img = cropping(new_img, True)
+            new_img = cropping(new_img, None, True)
         else:
-            new_img = func_subtract(img4, last_img)
-            new_img = cropping(new_img)
+            new_img0 = func_subtract(img4, last_img)
+            new_img = cropping(new_img0, None if index == 7 else s_img)
+            s_img = new_img0
         last_img = img4
 
         new_img = 255 - new_img
@@ -109,10 +114,10 @@ def main():
 
             if index == 3:
                 new_img = func_img4(img4)
-                new_img = cropping(new_img, True)
+                new_img = cropping(new_img, None, True)
             else:
                 new_img = func_subtract(img4, last_img)
-                new_img = cropping(new_img)
+                new_img = cropping(new_img, None if index == 7 else last_img)
             last_img = img4
 
             new_img = 255 - new_img
