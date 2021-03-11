@@ -4,3 +4,5 @@
 *.h5
 *.png
 .vscode
+*.zip
+*.7z
