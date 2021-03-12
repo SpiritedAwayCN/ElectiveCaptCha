@@ -4,6 +4,8 @@
 
 基于opencv与tensorflow的验证码自动识别，单字符准确率约98%，完全准确率约95%，主要提供了最终的预处理部分思路，模型```./resnet_model2.hs```。
 
+Baseline模型和上下游相关工具采用 [MIT License](https://mit-license.org/) 进行许可。
+
 本项目仅用于学习交流，数据集见[xmcp/elective-dataset-2021spring](https://github.com/xmcp/elective-dataset-2021spring)，只使用了约1/4。
 
 [PKUAutoElevtive](https://github.com/zhongxinghong/PKUAutoElective)重写了此处的图像预处理代码，使得其摆脱OpenCV依赖库。由于该项目采用pytorch，因此模型的训练与本项目是独立的，准确率相近，而PKUAutoElevtive的模型经过了更加细致的Fine Tunning.
