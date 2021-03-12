@@ -2,11 +2,11 @@
 
 ![](intro.jpg)
 
-基于opencv与tensorflow的验证码自动识别，单字符准确率约98%，完全准确率约95%
+基于opencv与tensorflow的验证码自动识别，单字符准确率约98%，完全准确率约95%，主要提供了最终的预处理部分思路，模型```./resnet_model2.hs```。
 
-本项目仅用于学习交流，因此此处不提供训练数据以及预训练模型。仅包含代码与思路。
+本项目仅用于学习交流，数据集见[xmcp/elective-dataset-2021spring](https://github.com/xmcp/elective-dataset-2021spring)，只使用了约1/4。
 
-[PKUAutoElevtive](https://github.com/zhongxinghong/PKUAutoElective)可能部分重写了此处的图像预处理代码，使得其摆脱OpenCV依赖库。由于该项目采用pytorch，因此模型的训练与本项目是独立的，准确率相近，而PKUAutoElevtive的模型经过了更加细致的Fine Tunning.
+[PKUAutoElevtive](https://github.com/zhongxinghong/PKUAutoElective)重写了此处的图像预处理代码，使得其摆脱OpenCV依赖库。由于该项目采用pytorch，因此模型的训练与本项目是独立的，准确率相近，而PKUAutoElevtive的模型经过了更加细致的Fine Tunning.
 
 数据集大小：共5130张gif(按8:2划分训练集与测试集)，AutoElective的训练集会更大。
 
@@ -87,3 +87,11 @@ Epoch 15/15
 
 ### bootstrap-visualize.ipynb
 验证码识别过程可视化。
+
+
+## 相关工作
+
+- [zhongxinghong/PKUElectiveCaptcha2021Spring](https://github.com/zhongxinghong/PKUElectiveCaptcha2021Spring)
+- [xmcp/elective-dataset-2021spring](https://github.com/xmcp/elective-dataset-2021spring)
+
+by *Elector Quartet* (按字典序的倒序 *@xmcp, **@SpiritedAwayCN**, @Rabbit, @gzz*)

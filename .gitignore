@@ -6,3 +6,5 @@
 .vscode
 *.zip
 *.7z
+
+!resnet_model2.h5
